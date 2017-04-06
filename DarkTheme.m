@@ -62,13 +62,13 @@ classdef DarkTheme
        function obj = DarkTheme()
           % colors are based on modified Oblivion theme
           obj.ColorsUseSystem = false;
-          obj.ColorText = [211, 215, 207]/256;
-          obj.ColorBg = [46, 52, 54]/256;
-          obj.ColorKeyword = [255, 153, 0]/256;
-          obj.ColorComment = [136, 138, 133]/256;
-          obj.ColorString = [237, 212, 0]/256;
+          obj.ColorText = [194, 194, 194]/256;
+          obj.ColorBg = [27, 46, 70]/256;
+          obj.ColorKeyword = [60, 128, 226]/256;
+          obj.ColorComment = [113, 188, 47]/256;
+          obj.ColorString = [219, 197, 49]/256;
           obj.ColorUnterminatedString = [196,160,0]/256;
-          obj.ColorError = [239,41,41]/256;
+          obj.ColorError = [150, 58, 70]/256;
           obj.ColorWarning = [252,175,62]/256;
           obj.ColorMSystemCmds = [138,226,52]/256;
           obj.ColorHTMLLinks = [114, 159, 207]/256;
@@ -77,7 +77,7 @@ classdef DarkTheme
           obj.ColorAutofixHighlight = [164, 0, 0]/256;
           
           obj.ColorUseAutoVarHighlight = true;
-          obj.ColorAutoVarHighlight = [78, 154, 6]/256;
+          obj.ColorAutoVarHighlight = [33, 72, 115]/256;
           obj.ColorUseNonLocalVarHighlight = true;
           obj.ColorNonLocalVarHighlight = [114, 159, 207]/256;
           

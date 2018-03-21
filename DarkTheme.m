@@ -53,6 +53,8 @@ classdef DarkTheme
        %xml
        ColorXMLTag;
        ColorXMLAttribute;
+       ColorXMLValue;
+       ColorXMLOperator;
        ColorXMLDocType;
        ColorXMLCDATA;
        ColorXMLProcInstr;
@@ -63,15 +65,15 @@ classdef DarkTheme
           % colors are based on modified Oblivion theme
           obj.ColorsUseSystem = false;
           obj.ColorText = [194, 194, 194]/256;
-          obj.ColorBg = [27, 46, 70]/256;
-          obj.ColorKeyword = [60, 128, 226]/256;
-          obj.ColorComment = [113, 188, 47]/256;
-          obj.ColorString = [219, 197, 49]/256;
-          obj.ColorUnterminatedString = [196,160,0]/256;
-          obj.ColorError = [150, 58, 70]/256;
-          obj.ColorWarning = [252,175,62]/256;
-          obj.ColorMSystemCmds = [138,226,52]/256;
-          obj.ColorHTMLLinks = [114, 159, 207]/256;
+          obj.ColorBg = [39, 40, 34]/256;
+          obj.ColorKeyword = [249, 38, 114]/256;
+          obj.ColorComment = [117, 113, 94]/256;
+          obj.ColorString = [230, 219, 116]/256;
+          obj.ColorUnterminatedString = [255, 0, 0]/256;
+          obj.ColorError = [255, 0, 0]/256;
+          obj.ColorWarning = [255, 153, 0]/256;
+          obj.ColorMSystemCmds = [0, 255, 0]/256;
+          obj.ColorHTMLLinks = [0, 255, 255]/256;
           
           obj.ColorUseAutoFixHighlight = true;
           obj.ColorAutofixHighlight = [164, 0, 0]/256;
@@ -81,11 +83,13 @@ classdef DarkTheme
           obj.ColorUseNonLocalVarHighlight = true;
           obj.ColorNonLocalVarHighlight = [114, 159, 207]/256;
           
-          obj.ColorXMLTag = [114, 159, 207]/256;
-          obj.ColorXMLAttribute = [138, 226, 52]/256;
-          obj.ColorXMLDocType = [173, 127, 168]/256;
-          obj.ColorXMLCDATA = [173, 127, 168]/256;
-          obj.ColorXMLProcInstr = [173, 127, 168]/256;
+          obj.ColorXMLTag = [249, 38, 114]/256;
+          obj.ColorXMLAttribute = [255, 0, 0]/256;
+          obj.ColorXMLValue = [230, 219, 116]/256;
+          obj.ColorXMLOperator = [0, 255, 0]/256;
+          obj.ColorXMLDocType = [0, 255, 255]/256;
+          obj.ColorXMLCDATA = [0, 185, 215]/256;
+          obj.ColorXMLProcInstr = [0, 255, 255]/256;
        end
        
        function set(obj)
@@ -151,6 +155,12 @@ classdef DarkTheme
                java.awt.Color(obj.ColorXMLTag(1), obj.ColorXMLTag(2),obj.ColorXMLTag(3)));
            com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.attribute',...
                java.awt.Color(obj.ColorXMLAttribute(1), obj.ColorXMLAttribute(2),obj.ColorXMLAttribute(3)));
+           com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.value',...
+               java.awt.Color(obj.ColorXMLValue(1), obj.ColorXMLValue(2),obj.ColorXMLValue(3)));
+           com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.operator',...
+               java.awt.Color(obj.ColorXMLOperator(1), obj.ColorXMLOperator(2), obj.ColorXMLOperator(3)));           
+           com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.comment',...
+               java.awt.Color(obj.ColorComment(1), obj.ColorComment(2), obj.ColorComment(3)));
            com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.doctype',...
                java.awt.Color(obj.ColorXMLDocType(1), obj.ColorXMLDocType(2),obj.ColorXMLDocType(3)));
            com.mathworks.services.Prefs.setColorPref('Editor.Language.XML.Color.pi-content',...
